@@ -8,11 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('ubicacionxbodega', function (Blueprint $table) {
+        Schema::create('ubicaciones', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('bodega_id');
+            $table->string('bodega');
             $table->text('ubicacion');
-            $table->foreign('bodega_id')->references('id')->on('bodegas')->onDelete('cascade');
             $table->softDeletes();
         });
     }

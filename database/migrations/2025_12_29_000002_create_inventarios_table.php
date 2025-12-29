@@ -11,10 +11,10 @@ return new class extends Migration
         Schema::create('inventarios', function (Blueprint $table) {
             $table->id();
             $table->string('sku')->index();
-            $table->unsignedBigInteger('ubicacionxbodega_id');
+            $table->unsignedBigInteger('ubicaciones_id');
             $table->unsignedInteger('stock')->default(0);
             $table->string('estatus')->default('disponible');
-            $table->foreign('ubicacionxbodega_id')->references('id')->on('ubicacionxbodega')->onDelete('cascade');
+            $table->foreign('ubicaciones_id')->references('id')->on('ubicaciones')->onDelete('cascade');
             $table->softDeletes();
         });
     }
