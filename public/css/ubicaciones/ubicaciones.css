@@ -1,0 +1,282 @@
+/* Base layout */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: #eceff3;
+    color: #0f172a;
+}
+
+.site-nav {
+    background: #F78008;
+    color: #fff;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(2, 6, 23, 0.08);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    font-weight: 700;
+}
+
+.btn-link {
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(79, 70, 229, 0.12);
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.12s ease;
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(79, 70, 229, 0.16);
+}
+
+.btn-link:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.10);
+}
+
+/* Alinear acción en navbar */
+.nav-container .btn-link {
+    margin-left: 12px;
+}
+
+main {
+    padding: 24px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.form-inline {
+    display: grid;
+    grid-template-columns: 260px 1fr 140px;
+    grid-template-areas:
+        "bodega ubicacion submit";
+    gap: 14px;
+    align-items: end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bodega group */
+.field.field-bodega {
+    grid-area: bodega;
+}
+
+.field.field-bodega select,
+.field.field-bodega input[type="text"] {
+    height: 42px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0 12px;
+    background: #fff;
+}
+
+.field.field-bodega .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field.field-bodega #bodega_new_field {
+    display: none;
+    width: 240px;
+}
+
+.field.field-bodega #bodega_new_field.show {
+    display: block;
+}
+
+.field.field-bodega #bodega_new_field input[type="text"] {
+    height: 42px;
+}
+
+.field.field-bodega #bodega_new_field label {
+    margin-bottom: 6px;
+}
+
+/* Ubicación */
+.field.field-ubicacion {
+    grid-area: ubicacion;
+    margin-left: 30px;
+}
+
+.field.field-ubicacion textarea {
+    min-height: 25px;
+    resize: vertical;
+}
+
+/* Submit button */
+.form-inline .actions-submit {
+    grid-area: submit;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    height: 44px;
+    width: 100%;
+}
+
+@media (min-width: 781px) {
+    .btn-primary {
+        width: auto;
+    }
+}
+
+/* Table inline form alignment */
+.inline select,
+.inline input[type="text"] {
+    height: 38px;
+}
+
+.inline select {
+    min-width: 160px;
+}
+
+.inline input[name="bodega_new"] {
+    display: none;
+}
+
+.inline input[name="bodega_new"].show {
+    display: inline-block;
+    width: 140px;
+}
+
+@media (max-width: 780px) {
+    .form-inline {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "bodega"
+            "ubicacion"
+            "submit";
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+.field label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 0.95rem;
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px;
+    text-align: left;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inline {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.status {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.pager {
+    margin-top: 10px;
+}

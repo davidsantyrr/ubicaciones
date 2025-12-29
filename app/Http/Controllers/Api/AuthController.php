@@ -57,7 +57,7 @@ class AuthController extends Controller
         ]);
 
         // Siempre redirigir a menú principal independientemente del rol
-        return redirect('/menus/menu');
+        return redirect('/ubicaciones');
     }
 
     public function logout(Request $request)

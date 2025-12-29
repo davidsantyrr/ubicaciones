@@ -12,12 +12,13 @@ return new class extends Migration
             $table->id();
             $table->string('bodega');
             $table->text('ubicacion');
+            $table->timestamps();
             $table->softDeletes();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('ubicacionxbodega');
+        Schema::dropIfExists('ubicaciones');
     }
 };
